@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "description": "Smart Apartment & Visitor Management System",
   "scripts": {
+    "build": "echo 'No build required for backend'",
+    "start": "node backend/server.js",
     "test": "npm run test --prefix backend && npm run test --prefix frontend",
     "test:backend": "npm run test --prefix backend",
     "test:frontend": "npm run test --prefix frontend",
