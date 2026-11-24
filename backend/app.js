@@ -31,7 +31,7 @@ const createApp = () => {
 
   app.use(
     cors({
-      origin: config.clientUrl,
+      origin: config.corsOrigins || config.clientUrl,
       credentials: true,
     })
   );

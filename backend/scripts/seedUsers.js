@@ -9,7 +9,8 @@ import User from '../models/User.js';
 dotenv.config();
 
 const seed = async () => {
-  await mongoose.connect(process.env.MONGODB_URI);
+  const uri = process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb://localhost:27017/smart-apartment-vms';
+  await mongoose.connect(uri);
 
   const users = [
     {
