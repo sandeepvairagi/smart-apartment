@@ -6,6 +6,7 @@
   "scripts": {
     "build": "echo 'No build required for backend'",
     "start": "node backend/server.js",
+    "seed": "npm run seed --prefix backend",
     "test": "npm run test --prefix backend && npm run test --prefix frontend",
     "test:backend": "npm run test --prefix backend",
     "test:frontend": "npm run test --prefix frontend",

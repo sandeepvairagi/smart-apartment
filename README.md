@@ -1,6 +1,22 @@
 # Smart Apartment & Visitor Management System
 
-A production-quality full-stack web application for managing apartments, residents, guards, visitors, parcels, complaints, and notices — with real-time notifications and QR-based visitor entry.
+A production-quality full-stack web application for managing apartments, residents, guards, visitors, parcels, complaints, and notices — with real-time notifications, QR-based visitor entry, and an integrated AI assistant.
+
+## 🚀 Live Demo
+
+- **Frontend Application (Vercel)**: [https://smart-apartment-mu.vercel.app](https://smart-apartment-mu.vercel.app)
+- **Backend API (Render)**: Hosted on Render Web Service
+- **Database**: MongoDB Atlas
+
+### 🔑 Demo Accounts
+
+| Role | Email | Password | Access / Portal |
+| :--- | :--- | :--- | :--- |
+| **Admin** | `admin@apartment.com` | `admin123` | `/admin/dashboard` (Manage residents, guards, flats, complaints) |
+| **Guard** | `guard@apartment.com` | `guard123` | `/guard/dashboard` (QR scanner, check-in/out, deliveries) |
+| **Resident** | `resident_test_2026@apartment.com` | `password123` | `/resident/dashboard` (Visitor passes, complaints, notices) |
+
+*(Or register a new resident account directly from the signup page).*
 
 ## Tech Stack
 
@@ -50,7 +66,45 @@ smart-apartment-vms/
 
 ## Getting Started
 
-> Setup instructions will be added as we build each step.
+### 1. Clone & Install Dependencies
+
+```bash
+git clone https://github.com/sandeepvairagi/smart-apartment.git
+cd smart-apartment
+
+# Install dependencies
+npm --prefix backend install
+npm --prefix frontend install
+```
+
+### 2. Configure Environment Variables
+
+Create `backend/.env`:
+```env
+PORT=5000
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE=7d
+```
+
+Create `frontend/.env`:
+```env
+VITE_API_URL=http://localhost:5000/api
+VITE_SOCKET_URL=http://localhost:5000
+```
+
+### 3. Seed Database & Run
+
+```bash
+# Seed initial admin and guard accounts
+npm run seed
+
+# Start development servers
+npm run dev:backend
+npm run dev:frontend
+```
 
 ## Development Status
 
